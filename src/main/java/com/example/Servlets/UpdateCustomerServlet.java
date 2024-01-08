@@ -1,7 +1,7 @@
 package com.example.Servlets;
 
 import com.example.Beans.CustomerBean;
-import com.example.modules.Customer; // Assuming this module represents a Customer entity
+import com.example.modules.Customer; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
@@ -15,7 +15,7 @@ import java.io.IOException;
 @WebServlet("/updateCustomer")
 public class UpdateCustomerServlet extends HttpServlet {
     @EJB
-    private CustomerBean customerBean; // Assuming this EJB manages Customer operations
+    private CustomerBean customerBean; 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer customerId = Integer.parseInt(request.getParameter("customer_id"));
@@ -31,7 +31,7 @@ public class UpdateCustomerServlet extends HttpServlet {
         request.setAttribute("actionNameInf", "Update");
         request.setAttribute("actionNamePast", "updated");
         request.setAttribute("name", "Customer");
-        request.setAttribute("returnLink", "customers"); // Assuming it's a link for customers list
+        request.setAttribute("returnLink", "customers"); 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/actionSuccess.jsp");
         dispatcher.forward(request, response);
