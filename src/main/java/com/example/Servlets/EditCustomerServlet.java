@@ -1,7 +1,7 @@
 package com.example.Servlets;
 
-import com.example.Beans.CustomerBean; // Подставьте правильное имя вашего бина для работы с клиентами
-import com.example.modules.Customer; // Подставьте правильное имя вашего класса сущности Customer
+import com.example.Beans.CustomerBean; 
+import com.example.modules.Customer; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
@@ -14,14 +14,14 @@ import java.io.IOException;
 @WebServlet("/editCustomer")
 public class EditCustomerServlet extends HttpServlet {
     @EJB
-    private CustomerBean customerBean; // Подставьте правильное имя вашего бина для работы с клиентами
+    private CustomerBean customerBean; 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer customerId = Integer.parseInt(request.getParameter("id"));
-        Customer customer = customerBean.findCustomerById(customerId); // Получаем клиента по его ID
+        Customer customer = customerBean.findCustomerById(customerId); 
 
-        request.setAttribute("customer", customer); // Устанавливаем атрибут для передачи клиента в JSP
+        request.setAttribute("customer", customer); 
 
-        request.getRequestDispatcher("/editCustomer.jsp").forward(request, response); // Перенаправляем запрос к JSP странице
+        request.getRequestDispatcher("/editCustomer.jsp").forward(request, response);
     }
 }
