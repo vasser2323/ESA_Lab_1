@@ -4,7 +4,7 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import com.example.modules.CreditCard; // Импортируйте правильный класс CreditCard
+import com.example.modules.CreditCard; 
 
 import java.util.List;
 
