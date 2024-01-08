@@ -4,7 +4,7 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import com.example.modules.Customer; // Импорт вашего класса сущности Customer
+import com.example.modules.Customer; 
 
 import java.util.List;
 
