@@ -1,6 +1,6 @@
 package com.example.Servlets;
 
-import com.example.Beans.CustomerBean; // Assuming there's a CustomerBean for CRUD operations on Customer entity
+import com.example.Beans.CustomerBean; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/removeCustomer")
 public class RemoveCustomerServlet extends HttpServlet {
     @EJB
-    private CustomerBean customerBean; // Assuming this EJB manages Customer operations
+    private CustomerBean customerBean;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer customerId = Integer.parseInt(request.getParameter("id"));
