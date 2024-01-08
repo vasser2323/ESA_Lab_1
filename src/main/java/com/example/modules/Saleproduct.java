@@ -9,7 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Saleproduct { // Переименовал класс в Saleproduct (необходимо убедиться, что это соответствует требованиям ваших инструментов и настроек)
+public class Saleproduct { 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +27,9 @@ public class Saleproduct { // Переименовал класс в Saleproduct
     @JoinColumn(name = "sale_id")
     private Sale sale;
 
-    // Constructors
+
     public Saleproduct() {
-        // Конструктор по умолчанию
+
     }
 
     public Saleproduct(Product product, Sale sale, Integer quantity) {
@@ -38,7 +38,7 @@ public class Saleproduct { // Переименовал класс в Saleproduct
         this.quantity = quantity;
     }
 
-    // Getters and setters
+
     public Integer getSaleProductId() {
         return saleProductId;
     }
