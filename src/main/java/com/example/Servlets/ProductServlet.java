@@ -1,7 +1,7 @@
 package com.example.Servlets;
 
-import com.example.Beans.ProductBean; // Исправлен импорт на ProductBean
-import com.example.modules.Product; // Исправлен импорт на Product
+import com.example.Beans.ProductBean; 
+import com.example.modules.Product; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
@@ -13,18 +13,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/products") // Изменен URL на /products
+@WebServlet("/products") 
 public class ProductServlet extends HttpServlet {
 
     @EJB
-    private ProductBean productBean; // Измененная ссылка на ProductBean
+    private ProductBean productBean;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> productList = productBean.getAllProducts(); // Измененный метод
+        List<Product> productList = productBean.getAllProducts(); 
         
-        request.setAttribute("productList", productList); // Измененное имя атрибута
+        request.setAttribute("productList", productList); 
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp"); // Измененный путь
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp"); 
         dispatcher.forward(request, response);
     }
 }
