@@ -11,19 +11,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/removePaymentMethod") // Changed servlet URL mapping to /removePaymentMethod
-public class RemovePaymentMethodServlet extends HttpServlet { // Renamed to RemovePaymentMethodServlet
+@WebServlet("/removePaymentMethod") 
+public class RemovePaymentMethodServlet extends HttpServlet { 
     @EJB
-    private PaymentMethodBean paymentMethodBean; // Renamed LexiconBean to PaymentMethodBean
+    private PaymentMethodBean paymentMethodBean; 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer methodId = Integer.parseInt(request.getParameter("id"));
-        paymentMethodBean.removePaymentMethod(methodId); // Changed method name to removePaymentMethod
+        paymentMethodBean.removePaymentMethod(methodId); 
 
         request.setAttribute("actionNameInf", "Remove");
         request.setAttribute("actionNamePast", "removed");
         request.setAttribute("name", "Payment Method");
-        request.setAttribute("returnLink", "paymentmethods"); // Changed return link to paymentMethods
+        request.setAttribute("returnLink", "paymentmethods"); 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/actionSuccess.jsp");
         dispatcher.forward(request, response);
