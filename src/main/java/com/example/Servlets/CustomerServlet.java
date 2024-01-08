@@ -1,7 +1,7 @@
 package com.example.Servlets;
 
-import com.example.Beans.CustomerBean; // Подставьте правильное имя вашего бина для работы с клиентами
-import com.example.modules.Customer; // Подставьте правильное имя вашего класса сущности Customer
+import com.example.Beans.CustomerBean; 
+import com.example.modules.Customer; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
@@ -15,13 +15,13 @@ import java.util.List;
 @WebServlet("/customers")
 public class CustomerServlet extends HttpServlet {
     @EJB
-    private CustomerBean customerBean; // Подставьте правильное имя вашего бина для работы с клиентами
+    private CustomerBean customerBean; 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Customer> customerList = customerBean.getAllCustomers(); // Получаем список всех клиентов из базы данных
+        List<Customer> customerList = customerBean.getAllCustomers(); 
 
-        request.setAttribute("customerList", customerList); // Устанавливаем атрибут для передачи списка клиентов в JSP
+        request.setAttribute("customerList", customerList); 
 
-        request.getRequestDispatcher("/customers.jsp").forward(request, response); // Перенаправляем запрос к JSP странице
+        request.getRequestDispatcher("/customers.jsp").forward(request, response); 
     }
 }
