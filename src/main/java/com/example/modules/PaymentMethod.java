@@ -17,7 +17,7 @@ public class PaymentMethod {
     @Column(name = "method_name")
     private String methodName;
 
-    // Constructors
+
     public PaymentMethod() {
     }
 
@@ -25,7 +25,7 @@ public class PaymentMethod {
         this.methodName = methodName;
     }
 
-    // Getters and setters
+
     public Integer getMethodId() {
         return methodId;
     }
