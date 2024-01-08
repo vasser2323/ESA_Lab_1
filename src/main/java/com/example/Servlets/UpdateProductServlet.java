@@ -1,7 +1,7 @@
 package com.example.Servlets;
 
-import com.example.Beans.ProductBean; // Исправлен импорт на ProductBean
-import com.example.modules.Product; // Исправлен импорт на Product
+import com.example.Beans.ProductBean; 
+import com.example.modules.Product; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
@@ -12,21 +12,21 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/updateProduct") // Изменен URL на /updateProduct
+@WebServlet("/updateProduct") 
 public class UpdateProductServlet extends HttpServlet {
 
     @EJB
-    private ProductBean productBean; // Измененная ссылка на ProductBean
+    private ProductBean productBean; 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer productId = Integer.parseInt(request.getParameter("productId"));
-        Product updatedProduct = productBean.findProductById(productId); // Измененный метод
+        Product updatedProduct = productBean.findProductById(productId); 
 
-        updatedProduct.setProductName(request.getParameter("productName")); // Измененный метод
-        updatedProduct.setPrice(Double.parseDouble(request.getParameter("price"))); // Измененный метод
-        updatedProduct.setStockQuantity(Integer.parseInt(request.getParameter("stockQuantity"))); // Измененный метод
+        updatedProduct.setProductName(request.getParameter("productName")); 
+        updatedProduct.setPrice(Double.parseDouble(request.getParameter("price")));
+        updatedProduct.setStockQuantity(Integer.parseInt(request.getParameter("stockQuantity"))); 
 
-        productBean.updateProduct(updatedProduct); // Измененный метод
+        productBean.updateProduct(updatedProduct);
 
         request.setAttribute("actionNameInf", "Update");
         request.setAttribute("actionNamePast", "updated");
