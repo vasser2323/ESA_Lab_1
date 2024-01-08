@@ -7,22 +7,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Product { // Измененное имя сущности
+public class Product { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private Integer productId; // Измененный тип и имя переменной
+    private Integer productId; 
 
     @Column(name = "product_name", length = 100, nullable = false)
-    private String productName; // Измененный тип и имя переменной
+    private String productName; й
 
     @Column(name = "price", precision = 10, scale = 2, nullable = false)
-    private Double price; // Измененный тип и имя переменной
+    private Double price; 
 
     @Column(name = "stock_quantity", nullable = false)
-    private Integer stockQuantity; // Измененный тип и имя переменной
+    private Integer stockQuantity; 
 
-    // Constructors
+
     public Product() {
     }
 
@@ -32,7 +32,7 @@ public class Product { // Измененное имя сущности
         this.stockQuantity = stockQuantity;
     }
 
-    // Getters and setters
+
     public Integer getProductId() {
         return productId;
     }
