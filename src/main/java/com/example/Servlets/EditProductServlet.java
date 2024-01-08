@@ -10,22 +10,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import com.example.Beans.ProductBean; // Исправлен импорт на ProductBean
-import com.example.modules.Product; // Исправлен импорт на Product
+import com.example.Beans.ProductBean; 
+import com.example.modules.Product;
 
-@WebServlet("/editProduct") // Изменен URL на /editProduct
+@WebServlet("/editProduct") 
 public class EditProductServlet extends HttpServlet {
 
     @EJB
-    private ProductBean productBean; // Измененная ссылка на ProductBean
+    private ProductBean productBean; 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer productId = Integer.parseInt(request.getParameter("id"));
-        Product product = productBean.findProductById(productId); // Измененный метод
+        Product product = productBean.findProductById(productId); 
 
         request.setAttribute("product", product);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/editProduct.jsp"); // Измененный путь
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/editProduct.jsp"); 
         dispatcher.forward(request, response);
     }
 }
