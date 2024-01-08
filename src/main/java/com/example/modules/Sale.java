@@ -29,7 +29,7 @@ public class Sale {
     @JoinColumn(name = "method_id")
     private PaymentMethod paymentMethod;
 
-    // Constructors
+
     public Sale() {
     }
 
@@ -40,7 +40,7 @@ public class Sale {
         this.paymentMethod = paymentMethod;
     }
 
-    // Getters and setters
+
     public Integer getSaleId() {
         return saleId;
     }
