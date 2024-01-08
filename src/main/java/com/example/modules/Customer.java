@@ -26,7 +26,7 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    // Constructors
+
     public Customer() {
     }
 
@@ -37,7 +37,6 @@ public class Customer {
         this.address = address;
     }
 
-    // Getters and setters
     public Integer getCustomerId() {
         return customerId;
     }
