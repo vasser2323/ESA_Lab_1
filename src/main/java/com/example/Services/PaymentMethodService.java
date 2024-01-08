@@ -4,29 +4,29 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import com.example.modules.PaymentMethod; // Assuming PaymentMethod entity
+import com.example.modules.PaymentMethod; 
 
 import java.util.List;
 
 @Stateless
-public class PaymentMethodService { // Renamed class to PaymentMethodService
+public class PaymentMethodService { 
     
     @PersistenceContext(unitName="JavaEE")
     private EntityManager entityManager;
     
-    public void createPaymentMethod(PaymentMethod paymentMethod) { // Renamed method to createPaymentMethod
+    public void createPaymentMethod(PaymentMethod paymentMethod) { 
         entityManager.persist(paymentMethod);
     }
 
-    public PaymentMethod getPaymentMethodById(Integer methodId) { // Renamed method to getPaymentMethodById
+    public PaymentMethod getPaymentMethodById(Integer methodId) { 
         return entityManager.find(PaymentMethod.class, methodId);
     }
 
-    public void updatePaymentMethod(PaymentMethod paymentMethod) { // Renamed method to updatePaymentMethod
+    public void updatePaymentMethod(PaymentMethod paymentMethod) {
         entityManager.merge(paymentMethod);
     }
 
-    public void deletePaymentMethod(Integer methodId) { // Renamed method to deletePaymentMethod
+    public void deletePaymentMethod(Integer methodId) {
         PaymentMethod paymentMethod = entityManager.find(PaymentMethod.class, methodId);
         if (paymentMethod != null) {
             entityManager.remove(paymentMethod);
