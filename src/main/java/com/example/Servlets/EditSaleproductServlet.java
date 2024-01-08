@@ -2,10 +2,10 @@ package com.example.Servlets;
 
 import com.example.Beans.ProductBean;
 import com.example.Beans.SaleBean;
-import com.example.Beans.SaleproductBean; // Импортируйте SaleproductBean
+import com.example.Beans.SaleproductBean;
 import com.example.modules.Product;
 import com.example.modules.Sale;
-import com.example.modules.Saleproduct; // Импортируйте Saleproduct
+import com.example.modules.Saleproduct; 
 
 import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/editSaleproduct") // Измените URL пути на editSaleproduct
+@WebServlet("/editSaleproduct") 
 public class EditSaleproductServlet extends HttpServlet {
 
     @EJB
