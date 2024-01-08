@@ -15,17 +15,17 @@ import com.example.Beans.PaymentMethodBean;
 
 import com.example.modules.PaymentMethod;
 
-@WebServlet("/paymentmethods") // Changed the servlet URL mapping to /paymentMethods
-public class PaymentMethodServlet extends HttpServlet { // Renamed to PaymentMethodServlet
+@WebServlet("/paymentmethods") 
+public class PaymentMethodServlet extends HttpServlet { 
     @EJB
-    private PaymentMethodBean paymentMethodBean; // Renamed LexiconBean to PaymentMethodBean
+    private PaymentMethodBean paymentMethodBean; 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<PaymentMethod> paymentMethodsList = paymentMethodBean.getAllPaymentMethods(); // Changed method name to getAllPaymentMethods
+        List<PaymentMethod> paymentMethodsList = paymentMethodBean.getAllPaymentMethods(); 
 
-        request.setAttribute("paymentMethodsList", paymentMethodsList); // Changed attribute name to paymentMethodsList
+        request.setAttribute("paymentMethodsList", paymentMethodsList); 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/paymentmethods.jsp"); // Changed JSP page to paymentMethods.jsp
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/paymentmethods.jsp");
         dispatcher.forward(request, response);
     }
 }
