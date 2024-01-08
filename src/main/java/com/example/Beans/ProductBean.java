@@ -6,34 +6,34 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import com.example.modules.Product; // Обновленное имя сущности
+import com.example.modules.Product;
 
 @Stateless
-public class ProductBean { // Обновленное имя класса
+public class ProductBean { 
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void addProduct(Product product) { // Обновленное название метода и параметра
+    public void addProduct(Product product) {
         entityManager.persist(product);
     }
 
-    public void removeProduct(Integer productId) { // Обновленное название метода и параметра
+    public void removeProduct(Integer productId) { 
         Product product = entityManager.find(Product.class, productId);
         if (product != null) {
             entityManager.remove(product);
         }
     }
 
-    public void updateProduct(Product product) { // Обновленное название метода и параметра
+    public void updateProduct(Product product) { 
         entityManager.merge(product);
     }
 
-    public Product findProductById(Integer productId) { // Обновленное название метода и параметра
+    public Product findProductById(Integer productId) { 
         return entityManager.find(Product.class, productId);
     }
 
-    public List<Product> getAllProducts() { // Обновленное название метода и возвращаемого типа
+    public List<Product> getAllProducts() {
         return entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
     }
 }
