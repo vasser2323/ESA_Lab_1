@@ -6,10 +6,10 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import com.example.modules.Customer; // Подставьте сюда корректное название вашего класса сущности
+import com.example.modules.Customer;
 
 @Stateless
-public class CustomerBean { // Переименуйте этот класс согласно вашей сущности
+public class CustomerBean { 
 
     @PersistenceContext
     private EntityManager entityManager;
