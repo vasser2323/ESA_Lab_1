@@ -44,7 +44,7 @@ public class CreditCard {
         this.customer = customer;
     }
 
-    // Геттеры и сеттеры для всех полей
+    // Геттеры и сеттеры 
 
     public CreditCard() {
     }
